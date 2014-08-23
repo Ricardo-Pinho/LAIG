@@ -1,0 +1,5 @@
+Turma: 2
+Grupo: 2
+Elementos:
+Pedro Miguel Salgado Dias    ei09055
+Ricardo Jose Moreira Pinho   ei09045

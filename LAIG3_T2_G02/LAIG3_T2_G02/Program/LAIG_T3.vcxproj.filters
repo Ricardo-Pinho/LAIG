@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RGBpixmap.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\mainsock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Parser\Esfera.cpp">
+      <Filter>Header Files\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Parser\Rectangulo.cpp">
+      <Filter>Header Files\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Parser\RGBpixmap.cpp">
+      <Filter>Header Files\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Parser\SceneLoader.cpp">
+      <Filter>Header Files\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Parser\Torus.cpp">
+      <Filter>Header Files\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Parser\Triangulo.cpp">
+      <Filter>Header Files\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Parser\Cilindro.cpp">
+      <Filter>Header Files\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Parser\Component.cpp">
+      <Filter>Header Files\Parser</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\pick.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\RGBpixmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Component.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Edge.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Esfera.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Geometricas.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Graph.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Illumination.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Light.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Material.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Matrix.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\No.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Omni.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Ortho.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Prespective.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Primitive.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Rectangulo.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\RGBA.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\RGBpixmap.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\SceneLoader.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Spot.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Textura.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Torus.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Triangulo.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Vertex.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\View.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\XYZ.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Parser\Cilindro.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{33430273-f410-46b5-b436-5bcfbeb79a65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{1800f6b4-c14d-4b0b-a471-ed1591706137}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parser">
+      <UniqueIdentifier>{ff87c512-60ca-4775-b352-a944906695c1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

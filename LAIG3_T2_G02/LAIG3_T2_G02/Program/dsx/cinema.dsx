@@ -1,0 +1,572 @@
+<!-- Os comentarios devem ter espacos no inicio e no fim, para -->
+<!-- separar dos hifens -->
+<!-- Nao devem ser usados caracteres especiais (p.ex. acentos) -->
+<!-- Todas as tags e atributos sao obrigatorios, excepto onde for -->
+<!-- referido o contrario -->
+
+<dsx>
+    <!-- deve definir-se um objeto para raiz do grafo , assim -->
+    <!-- como o comprimento dos tres eixos (cilindros) -->
+	<scene root="cena" axis_length="16.0"/>
+
+    <views default="o1" >
+        <!-- tem de existir, pelo menos, uma vista das -->
+        <!-- seguintes (perspective ou ortho) -->
+        <perspective id="v1" near="0.1" far="100.0" angle="45.0">
+            <from x="0.0" y="20.0" z="0.0" />
+            <to x="1.0" y="0.0" z="1.0" />
+        </perspective>		
+		<ortho id="o1" left="-20" right="20" top="20" bottom="-20" near="-20" far="20"/>
+    </views>
+
+    <illumination doublesided="0" local="0" >
+        <ambient r="0.2" g="0.2" b="0.2" a="1.0" />
+        <background r="0.0" g="0.0" b="0.0" a="0.0" />
+    </illumination>
+
+    <lights>
+        <!-- Deve existir um ou mais blocos "omni" ou "spot" -->
+        <!-- (ate ao maximo declarado em "scene") -->
+        <!-- Os identificadores "id" nao podem ser repetidos -->
+        <omni id="o1" enabled="1">
+            <location x="8.0" y="8.0" z="8.0" w="1.0" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1.0" />
+            <diffuse r="0.8" g="0.8" b="0.8" a="1.0" />
+            <specular r="0.8" g="0.8" b="0.8" a="1.0" />
+        </omni>
+		
+    </lights>
+
+    <textures>
+		<texture id="chao" file="textures/tapete.bmp" length_s ="16.0" length_t ="16.0"/>			  
+		<texture id="parede_ver" file="textures/paredever.bmp" length_s ="20.0" length_t ="8.0"/>			  
+		<texture id="tri" file="textures/tri.bmp" length_s ="0.5" length_t ="0.5"/>	
+		<texture id="ecra" file="textures/ecra.bmp" length_s ="16.0" length_t ="8.0"/>
+		<texture id="lampada" file="textures/lampada.bmp" length_s ="1.0" length_t ="1.0"/>
+    </textures>
+
+  
+    <materials>
+        <!-- Deve existir um ou mais blocos "material" -->
+        <!-- (ate ao maximo declarado em "scene") -->
+        <!-- Os identificadores "id" nao podem ser repetidos -->
+        <material id="normal">
+			<emission r="0.0" g="0.0" b="0.0" a="1.0" />
+			<ambient r="0.6" g="0.6" b="0.6" a="1.0" />
+			<diffuse r="0.8" g="0.8" b="0.8" a="1.0" />
+			<specular r="1.0" g="1.0" b="1.0" a="1.0" />
+			<shininess value="30.0" />
+		</material>
+	
+		<material id="branco">
+			<emission r="0.0" g="0.0" b="0.0" a="1.0"/>
+			<ambient  r="1.0" g="1.0" b="1.0" a="1.0"/>
+			<diffuse r="1.0" g="1.0" b="1.0" a="1.0"/>
+			<specular r="0.5" g="0.5" b="0.5" a="1.0"/>
+			<shininess value="10.0" />
+		</material>		
+		
+        <material id="amarelo">
+          <emission r="1.0" g="1.0" b="0.0" a="1.0"/>
+          <ambient  r="0.0" g="1.0" b="0.0" a="1.0"/>
+          <diffuse r="0.0" g="1.0" b="0.0" a="1.0"/>
+          <specular r="0.1" g="0.1" b="0.1" a="1.0"/>
+          <shininess value="10" />
+        </material>
+		
+		<material id="vermelho">
+          <emission r="1.0" g="0.0" b="0.0" a="1.0"/>
+          <ambient  r="1.0" g="0.0" b="0.0" a="1.0"/>
+          <diffuse r="1.0" g="0.0" b="0.0" a="1.0"/>
+          <specular r="0.1" g="0.1" b="0.1" a="1.0"/>
+          <shininess value="10" />
+        </material>
+    </materials>
+
+    <transformations>
+        <!-- Deve existir um ou mais blocos "transformation" -->
+        <!-- Os identificadores "id" nao podem ser repetidos -->
+        <!-- instrucoes a usar sem limite nem ordem -->
+           <!-- deve existir pelo menos uma transformacao -->           
+		    <!--translate x="0.0" y="0.0" z="0.0" /-->		   
+		    <!--scale x="2.0" y="1.0" z="1.0" /-->    
+		    <transformation id="t1">
+		       <rotate axis="x" angle="90.0" />         
+        </transformation>
+		    <transformation id="parede_pos">        
+		       <translate x="0.0" y="0.0" z="-8.0" />	      
+         </transformation>
+		    <transformation id="parede_lat">         
+		       <rotate axis="y" angle="90.0" />			
+		       <translate x="0.0" y="0.0" z="-8.0" />  	
+        </transformation>
+        <transformation id="prim_asento">
+          <translate x="0.0" y="1.0" z="0.0" />
+          <rotate axis="x" angle="-90.0" />
+        </transformation>
+        <transformation id="prim_respaldo">
+          <translate x="0.0" y="2.0" z="-1.0" />
+        </transformation>
+        <transformation id="prim_perna">
+          <rotate axis="x" angle="-90.0" />
+        </transformation>
+        <transformation id="prim_perna1">
+          <translate x="0.9" y="0.0" z="-0.9" />
+        </transformation>
+        <transformation id="prim_perna2">
+          <translate x="-0.9" y="0.0" z="-0.9" />
+        </transformation>
+        <transformation id="prim_perna3">
+          <translate x="0.9" y="0.0" z="0.9" />
+        </transformation>
+        <transformation id="prim_perna4">
+          <translate x="-0.9" y="0.0" z="0.9" />
+        </transformation>
+        <transformation id="cadeira_comp">
+          <rotate axis="y" angle="180.0" />
+        </transformation>
+        <transformation id="cadeira_c1">
+          <translate x="5.5" y="0.0" z="-1.0" />
+        </transformation>
+        <transformation id="cadeira_c2">
+          <translate x="2.5" y="0.0" z="-1.0" />
+        </transformation>
+        <transformation id="cadeira_c3">
+          <translate x="-2.5" y="0.0" z="-1.0" />
+        </transformation>
+        <transformation id="cadeira_c4">
+          <translate x="-5.5" y="0.0" z="-1.0" />
+        </transformation>
+        <transformation id="cadeiras">
+          <translate x="0.0" y="0.0" z="0.0" />
+        </transformation>
+        <transformation id="prim_lampada">
+          <translate x="0.0" y="8.0" z="0.0" />
+        </transformation>	
+		<transformation id="lampada_comp">	
+          <translate x="0.0" y="0.0" z="0.0" />		
+        </transformation>
+		<transformation id="lampada_dir">
+          <translate x="0.0" y="0.0" z="0.5" />		  
+          <rotate axis="y" angle="180.0" />		  		  
+          <rotate axis="z" angle="90.0" />		  	  	  		  
+          <rotate axis="x" angle="30.0" />			  
+        </transformation>
+		<transformation id="lampada_esq">
+          <translate x="0.0" y="0.0" z="-0.5" />	 
+          <rotate axis="z" angle="-90.0" />		  		  	  	  		  
+          <rotate axis="x" angle="30.0" />	
+        </transformation>		
+		<transformation id="lampadas">
+          <translate x="0.0" y="6.0" z="0.0" />	
+        </transformation>
+		<transformation id="lampada1">
+          <translate x="-8.0" y="0.0" z="0.0" />
+        </transformation>
+		<transformation id="lampada2">
+          <translate x="-8.0" y="0.0" z="-4.0" />
+        </transformation>
+		<transformation id="lampada3">
+          <translate x="-8.0" y="0.0" z="4.0" />	
+        </transformation>
+    </transformations>
+
+    <primitives>
+        <!-- Deve existir um ou mais blocos "primitive" -->
+        <!-- (ate ao maximo declarado em "scene") -->
+        <!-- Os identificadores "id" nao podem ser repetidos -->
+        <primitive id="chao">
+            <!-- declaracao obrigatoria de material -->
+            <!-- o material declarado sobrepoe o material recebido -->
+            <!-- do objecto "pai" -->
+            <!-- id="inherit" mantem (herda) o material do objecto "pai" -->
+            <material id="inherit" />
+                                
+            <!-- declaracao obrigatoria de texture -->
+            <!-- id="inherit" mantem (herda) a textura do objecto "pai" -->
+            <!-- id="none" remove a textura recebida do pai -->
+            <!-- a textura declarada sobrepoe a textura recebida do -->
+            <!-- objecto "pai" -->
+            <texture id="inherit" />
+          
+            <!-- tags possiveis: rectangle, triangle, cylinder, sphere, torus -->
+            <!-- estes comandos devem ser interpretados, genericamente, -->
+            <!-- como em OpenGL (o cilindro deve adicionalmente ter tampas) -->
+            <!-- apenas pode existir UMA das seguintes tags: -->
+            <rectangle x1="-8.0" y1="8.0" x2="8.0" y2="-8.0" />
+        </primitive>
+		<primitive id="parede_pos">
+            <material id="normal" />   			
+			      <texture id="inherit" />
+            <rectangle x1="-8.0" y1="0.0" x2="8.0" y2="8.0" />
+            <!--triangle x1="3.0" y1="0.0" z1="0.0" x2="0.0" y2="5.0" z2="0.0" x3="-3.0" y3="0.0" z3="0.0"/-->
+            <!--cylinder base="0.45" top="0.45" height="8.0" slices="8" stacks="1" /-->
+            <!--sphere radius="3.0" slices="11" stacks="11" /-->
+            <!--torus inner="1.0" outer="5.0" slices="32" loops="1" /-->
+        </primitive>
+		<primitive id="parede_lat">
+            <material id="normal" />   			
+			<texture id="inherit" />
+            <rectangle x1="-8.0" y1="0.0" x2="8.0" y2="8.0" />
+        </primitive>
+		<primitive id="perna">
+          <material id="inherit" />
+          <texture id="none" />
+          <cylinder base="0.1" top="0.1" height="1.0" slices="8" stacks="1" />
+        </primitive>
+        <primitive id="respaldo">
+          <material id="inherit" />
+          <texture id="none" />
+          <rectangle x1="-1.0" y1="-1.0" x2="1.0" y2="1.0" />
+        </primitive>
+        <primitive id="lampada">
+          <material id="inherit" />
+          <texture id="none" />
+          <sphere radius="0.2" slices="8" stacks="16" />
+        </primitive>
+		<primitive id="lampada_ext">
+          <material id="branco" />
+          <texture id="tri" />
+          <triangle x1="-0.5" y1="0.0" z1="0.0" x2="0.2" y2="1.0" z2="0.0" x3="0.5" y3="0.0" z3="0.0"/>
+        </primitive>			
+    </primitives> 
+  
+    <components>
+        <!--  ...........................chao e parades............................. -->
+        <component id="chao">
+            <!-- bloco "transformation" obrigatorio -->
+            <transformation>
+                <transformationref id="t1" />             
+            </transformation>
+            <materials>
+                <material id="normal" />
+            </materials>
+            <texture id="chao" />
+            <children>
+                <primitiveref id="chao" />
+            </children>
+        </component>
+		<component id="parede_pos">
+                <!-- bloco "transformation" obrigatorio -->
+                <transformation>
+                    <transformationref id="parede_pos" />             
+                </transformation>          
+                <materials>
+                    <material id="inherit" />
+                </materials>
+                <texture id="ecra" />
+                <children>
+				    <primitiveref id="parede_pos" />
+                </children>
+        </component>
+		    <component id="parede_lat">
+            <!-- bloco "transformation" obrigatorio -->
+            <transformation>
+                <transformationref id="parede_lat" />             
+            </transformation>          
+            <materials>
+                <material id="branco" />
+            </materials>
+            <texture id="parede_ver"/>
+            <children>
+				<primitiveref id="parede_lat" />
+            </children>
+        </component>
+
+        <!--  ...........................cadeira............................. -->
+        <component id="perna">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="prim_perna" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <primitiveref id="perna" />
+          </children>
+        </component>
+        <component id="perna_pos_dir">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="prim_perna1" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <componentref id="perna" />
+          </children>
+        </component>
+        <component id="perna_pos_esq">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="prim_perna2" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <componentref id="perna" />
+          </children>
+        </component>
+        <component id="perna_front_dir">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="prim_perna3" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <componentref id="perna" />
+          </children>
+        </component>
+        <component id="perna_front_esq">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="prim_perna4" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <componentref id="perna" />
+          </children>
+        </component>
+        <component id="asento">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="prim_asento" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <primitiveref id="respaldo" />            
+          </children>
+        </component>
+        <component id="respaldo">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="prim_respaldo" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <primitiveref id="respaldo" />
+          </children>
+        </component>
+        <component id="cadeira">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="cadeira_comp" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <componentref id="respaldo" />
+            <componentref id="asento" />
+            <componentref id="perna_pos_dir" />
+            <componentref id="perna_pos_esq" />
+            <componentref id="perna_front_dir" />
+            <componentref id="perna_front_esq" />
+          </children>
+        </component>
+
+        <!--  ...........................fila de cadeiras............................. -->
+        <component id="c1">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="cadeira_c1" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <componentref id="cadeira" />
+          </children>
+        </component>
+        <component id="c2">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="cadeira_c2" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <componentref id="cadeira" />
+          </children>
+        </component>
+        <component id="c3">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="cadeira_c3" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <componentref id="cadeira" />
+          </children>
+        </component>
+        <component id="c4">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="cadeira_c4" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <componentref id="cadeira" />
+          </children>
+        </component>      
+        <component id="cadeiras">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="cadeiras" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <componentref id="c1" />
+            <componentref id="c2" />
+            <componentref id="c3" />
+            <componentref id="c4" />
+          </children>
+        </component>
+      
+        <!--  ...........................objetos na cena.......................... -->
+        <component id="lampada">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>				
+            <transformationref id="prim_lampada" />
+          </transformation>
+          <materials>
+            <material id="amarelo" />
+          </materials>
+          <texture id="none"/>
+          <children>
+            <primitiveref id="lampada" />
+          </children>
+        </component> 
+	
+
+
+		<component id="lampada_comp">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="lampada_comp" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>					
+            <primitiveref id="lampada" />
+          </children>
+        </component>		
+		<component id="lampada1">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="lampada1" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>		
+            <componentref id="lampada_comp" />
+          </children>
+        </component>
+		<component id="lampada2">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="lampada2" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>		
+            <componentref id="lampada_comp" />
+          </children>
+        </component>
+		<component id="lampada3">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="lampada3" />
+          </transformation>
+          <materials>
+            <material id="inherit" />
+          </materials>
+          <texture id="none"/>
+          <children>		
+            <componentref id="lampada_comp" />
+          </children>
+        </component>
+		<component id="lampadas">
+          <!-- bloco "transformation" obrigatorio -->
+          <transformation>
+            <transformationref id="lampadas" />
+          </transformation>
+          <materials>
+            <material id="amarelo" />
+          </materials>
+          <texture id="none"/>
+          <children>		
+            <componentref id="lampada1" />				
+            <componentref id="lampada2" />	
+            <componentref id="lampada3" />	
+          </children>
+        </component>
+		 
+		<!--  ...........................raiz da cena............................. -->
+		    <component id="cena">
+                <!-- bloco "transformation" obrigatorio -->
+                <transformation>
+                    <!-- deve conter uma referencia a uma das "transformation" -->
+                    <!-- declaradas anteriormente -->
+                    <!--translate x="4.0" y="0.0" z="4.0" /-->
+				<scale x="10" y="10" z="10" />
+                </transformation>
+          
+                <materials key="a">
+                    <material id="branco" />
+					<material id="inherit" />
+					<material id="vermelho" />
+                </materials>
+          
+                <!-- objecto "pai" -->
+                <texture id="none" />
+
+                <!-- bloco "children" obrigatorio num "component" -->
+                <children>
+                    <componentref id="chao" />
+				    <componentref id="parede_pos" />				
+				    <componentref id="parede_lat" />
+                    <componentref id="cadeiras" />
+                    <componentref id="lampada" />					
+                    <componentref id="lampadas" />										
+                </children>
+        </component>
+    </components>
+</dsx>

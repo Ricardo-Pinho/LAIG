@@ -1,0 +1,5 @@
+#include "Rectangulo.h"
+#include "Triangulo.h"
+#include "Cilindro.h"
+#include "Esfera.h"
+#include "Torus.h"

@@ -1,0 +1,1426 @@
+<?xml version="1.0"?>
+<!-- Os comentarios devem ter espacos no inicio e no fim, para -->
+<!-- separar dos hifens -->
+<!-- Nao devem ser usados caracteres especiais (p.ex. acentos) -->
+<!-- Todas as tags e atributos sao obrigatorios, excepto onde for -->
+<!-- referido o contrario -->
+
+<dsx>
+	
+	<scene root="Cena" axis_length="10.0" />
+	
+		
+	<illumination doublesided="0" local="1" >
+        <ambient r="0.6" g="0.6" b="0.6" a="1.0" />
+        <background r="0.0" g="0.0" b="0.0" a="1.0" />
+    </illumination>
+	
+	<lights>
+        <!-- Deve existir um ou mais blocos "omni" ou "spot" -->
+        <!-- Os identificadores "id" nao podem ser repetidos -->
+          <omni id="light1" enabled="1" > -->
+              <location x="0.0" y="3.0" z="4.0" w="1.0" /> 
+             <ambient r="0.5" g="0.5" b="0.5" a="1.0" />  
+              <diffuse r="0.5" g="0.5" b="0.5" a="1.0" />  
+              <specular r="0.7" g="0.7" b="0.7" a="1.0" /> 
+          </omni> 
+    </lights>
+	
+	<textures>
+        <!-- Deve existir um ou mais blocos "texture" -->
+        <!-- Os identificadores "id" nao podem ser repetidos -->
+        <!-- s e t: factores de escala (ver notas finais) -->
+        <texture id="road" file="textures/road.bmp" length_s="110" length_t="110" />
+		<texture id="paisagem1" file="textures/paisagem1.bmp" length_s="110" length_t="50" />
+		<texture id="paisagem2" file="textures/paisagem2.bmp" length_s="110" length_t="50" />
+		<texture id="ceu" file="textures/ceu.bmp" length_s="110" length_t="110" />
+		<texture id="glass" file="textures/glass.bmp" length_s="4" length_t="2.5" />
+		<texture id="farol" file="textures/farol.bmp" length_s="1" length_t="1" />
+		<texture id="glass2" file="textures/glass.bmp" length_s="10" length_t="5" />
+		<texture id="glass3" file="textures/glass.bmp" length_s="3" length_t="9" />
+	</textures>
+	
+	 <materials>
+        <!-- Deve existir um ou mais blocos "material" -->
+        <!-- Os identificadores "id" nao podem ser repetidos -->
+        <material id="default" >
+            <emission r="0.0" g="0.0" b="0.0" a="1.0" />
+            <ambient r="0.7" g="0.7" b="0.7" a="1.0" />
+            <diffuse r="0.7" g="0.7" b="0.7" a="1.0" />
+            <specular r="0.3" g="0.3" b="0.3" a="1.0" />
+            <shininess value="128.0" />
+        </material>
+		<material id="black" >
+            <emission r="0.0" g="0.0" b="0.0" a="1.0" />
+            <ambient r="0.0" g="0.0" b="0.0" a="1.0" />
+            <diffuse r="0.0" g="0.0" b="0.0" a="1.0" />
+            <specular r="0.3" g="0.3" b="0.3" a="1.0" />
+            <shininess value="128.0" />
+        </material>
+	    <material id="red" >
+            <emission r="0.0" g="0.0" b="0.0" a="1.0" />
+            <ambient r="0.6" g="0.0" b="0.0" a="1.0" />
+            <diffuse r="0.6" g="0.0" b="0.0" a="1.0" />
+            <specular r="0.3" g="0.3" b="0.3" a="1.0" />
+            <shininess value="128.0" />
+        </material>
+			    <material id="brown" >
+            <emission r="0.0" g="0.0" b="0.0" a="1.0" />
+            <ambient r="0.5" g="0.25" b="0.0" a="1.0" />
+            <diffuse r="0.5" g="0.25" b="0.0" a="1.0" />
+            <specular r="0.3" g="0.3" b="0.3" a="1.0" />
+            <shininess value="128.0" />
+        </material>
+    </materials>
+	
+	  <transformations>
+	    <!--AUTOCARRO INTEIRO-->
+		<transformation id="tAutocarro">
+		     <scale x="2.5" y="2" z="3"/>
+			 <translate x="-10" y="7" z="0.0" />
+        </transformation>
+	  	<!--AUTOCARRO-->
+        <transformation id="tJanelas">
+		     <translate x="-5" y="0.0" z="0.0" />
+		     <rotate axis="y" angle="-90" />
+        </transformation>
+		
+		<transformation id="tParedesTI">
+		     <translate x="0.0" y="0.0" z="-10.0" />
+		     <rotate axis="y" angle="180" />
+        </transformation>
+
+		<transformation id="tParedesFI">
+		     <translate x="0.0" y="0.0" z="10.0" />
+        </transformation>
+		
+		<transformation id="tParedesD1S">
+		     <translate x="5.0" y="0.0" z="0.0" />
+			 <rotate axis="y" angle="90" />
+        </transformation>
+		
+		<transformation id="tChao">
+		     <translate x="0.0" y="-5.0" z="0.0" />
+			 <rotate axis="x" angle="90" />
+        </transformation>
+		<!--/AUTOCARRO-->
+		<!--RODAS-->
+		<transformation id="tRoda1">
+		     <translate x="-6.5" y="-4.5" z="-4.0" />
+			 <rotate axis="y" angle="90" />
+        </transformation>
+		<transformation id="tRoda2">
+		     <translate x="-6.5" y="-4.5" z="4.0" />
+			 <rotate axis="y" angle="90" />
+        </transformation>
+		<transformation id="tRoda3">
+		     <translate x="6.5" y="-4.5" z="-4.0" />
+			 <rotate axis="y" angle="-90" />
+        </transformation>
+		<transformation id="tRoda4">
+		     <translate x="6.5" y="-4.5" z="4.0" />
+			 <rotate axis="y" angle="-90" />
+        </transformation>
+		<!--/RODAS-->
+		<!--FAROIS -->
+		<transformation id="tFarois1">
+		     <translate x="2.5" y="-2.5" z="10.0" />
+        </transformation>
+		<transformation id="tFarois2">
+		     <translate x="-2.5" y="-2.5" z="10.0" />
+        </transformation>
+		<transformation id="tFarois3">
+		     <translate x="-2.5" y="-2.5" z="-10.0" />
+			 <rotate axis="y" angle="180" />
+        </transformation>
+		<transformation id="tFarois4">
+		     <translate x="2.5" y="-2.5" z="-10.0" />
+			 <rotate axis="y" angle="180" />
+        </transformation>
+		<!--/FAROIS -->
+		<!--VIDROS -->
+		<transformation id="tvidros1">
+		     <translate x="-5.0" y="0.0" z="0.0" />
+			 <rotate axis="y" angle="-90" />
+        </transformation>
+		<transformation id="tvidrosPS2">
+		     <translate x="0.0" y="0.0" z="-10.0" />
+			 <rotate axis="y" angle="180" />
+        </transformation>
+		<transformation id="tvidrosPS3">
+		     <translate x="0.0" y="0.0" z="10.0" />
+        </transformation>
+		<transformation id="tvidros4">
+		     <translate x="5.0" y="0.0" z="0.0" />
+			 <rotate axis="y" angle="90" />
+        </transformation>
+
+		<!--/VIDROS -->
+		<!--SEGUNDO ANDAR -->
+		<transformation id="t2andar1">
+		     <translate x="0.0" y="5.0" z="0.0" />
+			 <rotate axis="x" angle="-90" />
+        </transformation>
+		<transformation id="t2andar2">
+		     <translate x="-5.0" y="0.0" z="0.0" />
+			 <rotate axis="y" angle="-90" />
+        </transformation>
+		<transformation id="t2andar3">
+		     <translate x="5.0" y="0.0" z="0.0" />
+			 <rotate axis="y" angle="90" />
+        </transformation>
+		<transformation id="t2andarSP1">
+		     <translate x="0.0" y="0.0" z="-10.0" />
+			 <rotate axis="y" angle="180" />
+        </transformation>
+		<transformation id="t2andarSP2">
+		     <translate x="0.0" y="0.0" z="10.0" />
+        </transformation>
+		<!--INICIO DUMA CADEIRA-->
+		<!--cubo-->
+		<transformation id="tcubo1">
+		     <translate x="-0.25" y="0.0" z="0.0" />
+			  <rotate axis="y" angle="-90" />
+        </transformation>
+		<transformation id="tcubo2">
+		     <translate x="0.0" y="0.0" z="-0.25" />
+			  <rotate axis="y" angle="180" />
+        </transformation>
+		<transformation id="tcubo3">
+		    <translate x="0.0" y="0.0" z="0.25" />
+        </transformation>
+		<transformation id="tcubo4">
+		    <translate x="0.0" y="0.25" z="0.0" />
+			  <rotate axis="x" angle="-90" />
+        </transformation>
+		<transformation id="tcubo5">
+		     <translate x="0.25" y="0.0" z="0.0" />
+			  <rotate axis="y" angle="90" />
+        </transformation>
+		<transformation id="tcubo6">
+		     <translate x="0.0" y="-0.25" z="0.0" />
+			  <rotate axis="x" angle="90" />
+        </transformation>
+		<!--/cubo-->
+		<!--chairLegs-->
+		<transformation id="tchairLeg">
+		     <translate x="0.0" y="2.25" z="0.0" />
+			 <scale x="1.0" y="6.5" z="1.0" />
+        </transformation>
+		<!--/chairLegs-->
+		<!--Chair-->
+		<transformation id="tchairB"><!--Costas-->
+		     <translate x="0.75" y="5.5" z="0.0" />
+			 <scale x="4.0" y="8.0" z="1.0" />
+        </transformation>
+		
+		<transformation id="tchairC"><!--Tampa-->
+		     <translate x="0.75" y="4" z="1.0" />
+			 <scale x="4.0" y="1.0" z="5.0" />
+        </transformation>
+		
+		<transformation id="tchairL1"><!--/perna2-->
+		     <translate x="1.5" y="0.0" z="0.0" />
+        </transformation>
+		<transformation id="tchairL2"><!--/perna3-->
+		     <translate x="1.5" y="0.0" z="2.0" />
+        </transformation>
+		<transformation id="tchairL3"><!--/perna4-->
+		     <translate x="0.0" y="0.0" z="2.0" />
+        </transformation>
+		<!--/Chair-->
+		<!--FIM DUMA CADEIRA-->
+		<!--INICIO DAS CADEIRAS--> 
+		<!--Aplicar para mexer cadeira completa para o topo do autocarro--> 
+		<transformation id="t2chair1">
+		     <translate x="2.0" y="5.0" z="-9.0" />
+        </transformation>
+		<transformation id="t2chair2">
+		     <translate x="2.0" y="5.0" z="-5.0" />
+        </transformation>
+		<transformation id="t2chair3">
+		     <translate x="2.0" y="5.0" z="-1.0" />
+        </transformation>
+		<transformation id="t2chair4">
+		     <translate x="2.0" y="5.0" z="3.0" />
+        </transformation>
+		<transformation id="t2chair5">
+		     <translate x="2.0" y="5.0" z="7.0" />
+        </transformation>
+		
+		<transformation id="t2chair6">
+		     <translate x="-3.0" y="5.0" z="-9.0" />
+        </transformation>
+		<transformation id="t2chair7">
+		     <translate x="-3.0" y="5.0" z="-5.0" />
+        </transformation>
+		<transformation id="t2chair8">
+		     <translate x="-3.0" y="5.0" z="-1.0" />
+        </transformation>
+		<transformation id="t2chair9">
+		     <translate x="-3.0" y="5.0" z="3.0" />
+        </transformation>
+		<transformation id="t2chair10">
+		     <translate x="-3.0" y="5.0" z="7.0" />
+        </transformation>
+		<!--FIM DAS CADEIRAS-->
+		<!--/SEGUNDO ANDAR -->
+		<!--CEU -->
+		<transformation id="tCeu">
+			<translate x="0.0" y="50.0" z="0.0" />
+		     <rotate axis="x" angle="90" />
+        </transformation>
+			<!--DIREITA -->
+		<transformation id="tDireita">
+			<translate x="55.0" y="0.0" z="0.0" />
+			<rotate axis="y" angle="-90" />
+        </transformation>
+			<!--ESQUERDA -->
+		<transformation id="tEsquerda">
+			<translate x="-55.0" y="0.0" z="0.0" />
+			<rotate axis="y" angle="90" />
+        </transformation>
+		<transformation id="tEstrada">
+			<rotate axis="x" angle="-90" />
+        </transformation>
+    </transformations>
+	
+	<primitives>
+	  <!--  INICIO DO SEGUNDO ANDAR -->
+		<primitive id="2andar1">
+           <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="-5" y1="-10" x2="5" y2="10" />
+        </primitive>
+		
+		<primitive id="2andar2">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="-10" y1="5" x2="10" y2="9" />
+        </primitive>
+		
+		<primitive id="2andarPS">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="-5" y1="5" x2="5" y2="9" />
+        </primitive>
+		
+		 <!--  INICIO DA CADEIRA -->
+		 <!-- RectCubo-->
+		 <primitive id="quadrado">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="-0.25" y1="-0.25" x2="0.25" y2="0.25" />
+        </primitive>
+		 <!--  FIM DA CADEIRA -->
+	  <!--  FIM DO SEGUNDO ANDAR -->
+	<!--  INICIO DO AUTOCARRO -->
+	<!--- janelas --->
+        <primitive id="primJanela">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="-10" y1="-5" x2="-6" y2="5" />
+        </primitive>
+		
+		 <primitive id="segJanela">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="-6" y1="-5" x2="-2" y2="2.5" />
+		 </primitive>
+		 
+		  <primitive id="tercJanela">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="-2" y1="-5" x2="2" y2="5" />
+		 </primitive>
+		 
+		  <primitive id="quatJanela">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="2" y1="-5" x2="6" y2="2.5" />
+		 </primitive>
+		 
+		 <primitive id="quintJanela">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="6" y1="-5" x2="10" y2="5" />
+		 </primitive>
+		 
+		 <primitive id="quintVidro1">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="6.5" y1="-4.5" x2="7.5" y2="4.5" />
+		 </primitive>
+		 
+		 <primitive id="quintVidro2">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="8.5" y1="-4.5" x2="9.5" y2="4.5" />
+		 </primitive>
+		 
+		 <primitive id="quintSuport1">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="6" y1="-5" x2="6.5" y2="5" />
+		 </primitive>
+		 
+		 <primitive id="quintSuport2">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="9.5" y1="-5" x2="10" y2="5" />
+		 </primitive>
+		 
+		 <primitive id="quintSuport3">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="6.5" y1="-5" x2="9.5" y2="-4.5" />
+		 </primitive>
+		 
+		 <primitive id="quintSuport4">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="6.5" y1="4.5" x2="9.5" y2="5" />
+		 </primitive>
+	
+		<primitive id="quintSuport5">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="7.5" y1="-4.5" x2="8.5" y2="4.5" />
+		 </primitive>
+	<!--- paredes --->	 
+		 <primitive id="paredeFT">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="-5" y1="-5" x2="5" y2="0" />
+		 </primitive>
+		 
+		  <primitive id="chao">
+            <material id="inherit" />
+            <texture id="inherit" />
+            <rectangle x1="-5" y1="-10" x2="5" y2="10" />
+		 </primitive>
+		 <!--  FIM DO AUTOCARRO -->
+		 <!--  INICIO DAS RODAS -->
+		 <primitive id="roda1">
+				<material id="inherit" />
+				<texture id="inherit" />
+				<torus inner="1.5" outer="1.5" slices="50" loops="10" />
+		  </primitive>
+		  <!--  FIM DAS RODAS -->
+		  <!--  INICIO DOS FAROIS -->
+		 <primitive id="farois1">
+				<material id="inherit" />
+				<texture id="inherit" />
+				<cylinder base="0.0" top="1.0" height="1.0" slices="20.0" stacks="20.0" />
+		  </primitive>
+		<!--  FIM DOS FAROIS -->
+		<!--  INICIO DOS VIDROS -->
+		 <primitive id="janela">
+				<material id="inherit" />
+				<texture id="inherit" />
+				 <rectangle x1="-6" y1="2.5" x2="-2" y2="5" />
+		  </primitive>
+		  
+		  <primitive id="janela2">
+				<material id="inherit" />
+				<texture id="inherit" />
+				 <rectangle x1="2" y1="2.5" x2="6" y2="5" />
+		  </primitive>
+		  
+		  <primitive id="paredeSup">
+				<material id="inherit" />
+				<texture id="inherit" />
+				 <rectangle x1="-5" y1="0" x2="5" y2="5" />
+		  </primitive>
+		<!--  FIM DOS VIDROS -->
+				<!--  ESTRADA -->
+		 <primitive id="estrada">
+				<material id="inherit" />
+				<texture id="inherit" />
+				 <rectangle x1="-55" y1="-55" x2="55" y2="55" />
+		  </primitive>
+				  <!--  CEU -->
+		 <primitive id="ceu">
+				<material id="inherit" />
+				<texture id="inherit" />
+				 <rectangle x1="-55" y1="-55" x2="55" y2="55" />
+		  </primitive>
+		    <!--  DIREITA -->
+		 <primitive id="direita">
+				<material id="inherit" />
+				<texture id="inherit" />
+				 <rectangle x1="-55" y1="0" x2="55" y2="50" />
+		  </primitive>
+		     <!--  ESQUERDA -->
+		 <primitive id="esquerda">
+				<material id="inherit" />
+				<texture id="inherit" />
+				 <rectangle x1="-55" y1="0" x2="55" y2="50" />
+		  </primitive>
+	</primitives>
+	
+	<components>
+	
+		<!--Raiz-->
+        <component id="Cena">
+            <transformation>
+            </transformation>
+		  <materials> -->
+                <material id="default" />
+            </materials> 
+            <texture id="none" />
+            <children>
+				<componentref id="Paredes" />
+				<!--<componentref id="Autocarro" />-->
+            </children>
+        </component>
+		
+			<!--Paredes da Cena-->
+		<component id="Paredes">
+            <transformation>
+            </transformation>
+		  <materials>
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Ceu" />
+				<componentref id="Parede_esquerda" />
+				<componentref id="Parede_direita" />
+				<componentref id="Rua" />
+            </children>
+        </component>
+		
+		<!--Tecto-->
+		<component id="Ceu">
+            <transformation>
+				<transformationref id="tCeu"/>
+            </transformation>
+		  <materials>
+                <material id="inherit" />
+            </materials> 
+            <texture id="ceu" />
+            <children>
+                <primitiveref id="ceu" /> 
+            </children>
+        </component>
+		
+		<!--Chao-->
+		<component id="Rua">
+            <transformation>
+				<transformationref id="tEstrada"/>
+            </transformation>
+		  <materials>
+                <material id="inherit" />
+            </materials> 
+            <texture id="road" />
+            <children>
+                <primitiveref id="estrada" />
+            </children>
+        </component>
+		
+		<!--Esquerda-->
+		<component id="Parede_esquerda">
+            <transformation>
+				<transformationref id="tEsquerda"/>
+            </transformation>
+		  <materials>
+                <material id="inherit" />
+            </materials> 
+            <texture id="paisagem1" />
+            <children>
+                <primitiveref id="esquerda" />
+            </children>
+        </component>
+		
+		<!--Direita-->
+		<component id="Parede_direita">
+            <transformation>
+				<transformationref id="tDireita"/>
+            </transformation>
+		  <materials>
+                <material id="inherit" />
+            </materials> 
+            <texture id="paisagem2" />
+            <children>
+                <primitiveref id="direita" />
+            </children>
+        </component>
+		
+			<!--Todos os poligonos do autocarro-->
+		<component id="Autocarro">
+            <transformation>
+				<transformationref id="tAutocarro" />
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Rodas" />
+				<componentref id="Vidro" />
+				<componentref id="2_Andar" />
+				<componentref id="Farois" />
+				<componentref id="Paredes_Autocarro" />
+            </children>
+        </component>
+		
+		<!--Rodas do Autocarro-->
+		<component id="Rodas">
+            <transformation>
+            </transformation>
+		  <materials> 
+                <material id="black" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Roda_tras_esquerda" />
+				<componentref id="Roda_tras_direita" />
+				<componentref id="Roda_frente_esquerda" />
+				<componentref id="Roda_frente_direita" />
+            </children>
+        </component>
+		
+		<!--Roda de tras à esquerda-->
+		<component id="Roda_tras_esquerda">
+            <transformation>
+				<transformationref id="tRoda1"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+          </materials> 
+          <texture id="none" />
+            <children>
+                <primitiveref id="roda1" />
+            </children>
+        </component>
+		
+		<!--Roda de tras à direita-->
+		<component id="Roda_tras_direita">
+            <transformation>
+				<transformationref id="tRoda3"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="roda1" />
+            </children>
+        </component>
+		
+		<!--Roda da frente à esquerda-->
+		<component id="Roda_frente_esquerda">
+            <transformation>
+				<transformationref id="tRoda2"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="roda1" />
+            </children>
+        </component>
+		
+		<!--Roda de frente à direita-->
+		<component id="Roda_frente_direita">
+            <transformation>
+				<transformationref id="tRoda4"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="roda1" />
+            </children>
+        </component>
+		
+		<!--Janelas e Vidros da frente e de trás-->
+		<component id="Vidro">
+            <transformation>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Janelas" />
+				<componentref id="Vidro_Frente_Tras" />
+            </children>
+        </component>
+		
+		<!--Especifico para as Janelas-->
+		<component id="Janelas">
+            <transformation>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="glass" />
+            <children>
+                <componentref id="Janelas_esquerda" />
+				<componentref id="Janelas_direita" />
+            </children>
+        </component>
+		
+		<!--Janelas da Esquerda do Autocarro-->
+		<component id="Janelas_esquerda">
+            <transformation>
+				<transformationref id="tvidros1"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="inherit" />
+            <children>
+                <primitiveref id="janela" />
+				<primitiveref id="janela2" />
+            </children>
+        </component>
+		
+		<!--Janelas da direita do Autocarro-->
+		<component id="Janelas_direita">
+            <transformation>
+				<transformationref id="tvidros4"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="inherit" />
+            <children>
+                <primitiveref id="janela" />
+				<primitiveref id="janela2" />
+            </children>
+        </component>
+		
+		<!--Vidros da Frente e de trás do Autocarro-->
+		<component id="Vidro_Frente_Tras">
+            <transformation>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="glass2" />
+            <children>
+                <componentref id="Vidro_Frente" />
+				<componentref id="Vidro_Tras" />
+            </children>
+        </component>
+		
+		<!--Vidro da Frente do Autocarro-->
+		<component id="Vidro_Frente">
+            <transformation>
+				<transformationref id="tvidrosPS3"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="inherit" />
+            <children>
+                <primitiveref id="paredeSup" />
+            </children>
+        </component>
+		
+		<!--Vidro de trás do Autocarro-->
+		<component id="Vidro_Tras">
+            <transformation>
+				<transformationref id="tvidrosPS2"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="inherit" />
+            <children>
+                <primitiveref id="paredeSup" />
+            </children>
+        </component>
+		
+	<!--Objectos no 2º Andar do autocarro-->
+		<component id="2_Andar">
+            <transformation>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="2_Andar_paredes" />
+				<componentref id="2_Andar_chao" />
+				<componentref id="2_Andar_cadeiras" />
+            </children>
+        </component>
+		
+		<!--Paredes no 2º Andar do autocarro-->
+		<component id="2_Andar_paredes">
+            <transformation>
+            </transformation>
+		  <materials> 
+                <material id="red" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="2_Andar_frente" />
+				<componentref id="2_Andar_tras" />
+				<componentref id="2_Andar_esquerda" />
+				<componentref id="2_Andar_direita" />
+            </children>
+        </component>
+		<!--Parede da frente do 2º Andar-->
+		<component id="2_Andar_frente">
+            <transformation>
+				<transformationref id="t2andarSP2"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="2andarPS" />
+            </children>
+        </component>
+		<!--Parede da trás do 2º Andar-->
+		<component id="2_Andar_tras">
+            <transformation>
+				<transformationref id="t2andarSP1"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="2andarPS" />
+            </children>
+        </component>
+		
+		<!--Parede da esquerda do 2º Andar-->
+		<component id="2_Andar_esquerda">
+            <transformation>
+				<transformationref id="t2andar2"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="2andar2" />
+            </children>
+        </component>
+		
+		<!--Parede da direita do 2º Andar-->
+		<component id="2_Andar_direita">
+            <transformation>
+				<transformationref id="t2andar3"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="2andar2" />
+            </children>
+        </component>
+		
+		<!--Chão do 2º Andar-->
+		<component id="2_Andar_chao">
+            <transformation>
+				<transformationref id="t2andar1"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="2andar1" />
+            </children>
+        </component>
+		
+		<!--Todas as Cadeiras no 2º Andar-->
+		<component id="2_Andar_cadeiras">
+            <transformation>
+            </transformation>
+		  <materials> 
+                <material id="brown" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cadeira_esquerda1" />
+				<componentref id="Cadeira_esquerda2" />
+				<componentref id="Cadeira_esquerda3" />
+				<componentref id="Cadeira_esquerda4" />
+				<componentref id="Cadeira_esquerda5" />
+				<componentref id="Cadeira_direita1" />
+				<componentref id="Cadeira_direita2" />
+				<componentref id="Cadeira_direita3" />
+				<componentref id="Cadeira_direita4" />
+				<componentref id="Cadeira_direita5" />				
+            </children>
+        </component>
+		
+		<!--Cada Cadeira Individual-->
+		
+		<component id="Cadeira_esquerda1">
+            <transformation>
+				<transformationref id="t2chair6"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cadeira" />
+            </children>
+        </component>
+		
+		<component id="Cadeira_esquerda2">
+            <transformation>
+				<transformationref id="t2chair7"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cadeira" />
+            </children>
+        </component>
+		
+		<component id="Cadeira_esquerda3">
+            <transformation>
+				<transformationref id="t2chair8"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cadeira" />
+            </children>
+        </component>
+		
+		<component id="Cadeira_esquerda4">
+            <transformation>
+				<transformationref id="t2chair9"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cadeira" />
+            </children>
+        </component>
+		
+		<component id="Cadeira_esquerda5">
+            <transformation>
+				<transformationref id="t2chair10"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cadeira" />
+            </children>
+        </component>
+		
+		<component id="Cadeira_direita1">
+            <transformation>
+				<transformationref id="t2chair1"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cadeira" />
+            </children>
+        </component>
+		
+		<component id="Cadeira_direita2">
+            <transformation>
+				<transformationref id="t2chair2"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cadeira" />
+            </children>
+        </component>
+		
+		<component id="Cadeira_direita3">
+            <transformation>
+				<transformationref id="t2chair3"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cadeira" />
+            </children>
+        </component>
+		
+		<component id="Cadeira_direita4">
+            <transformation>
+				<transformationref id="t2chair4"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cadeira" />
+            </children>
+        </component>
+	
+		<component id="Cadeira_direita5">
+            <transformation>
+				<transformationref id="t2chair5"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cadeira" />
+            </children>
+        </component>
+
+		<!--Componente que é chamada por todas as cadeiras-->
+		<component id="Cadeira">
+            <transformation>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Costas" />
+				<componentref id="Tampa" />
+				<componentref id="Pernas" />
+            </children>
+        </component>
+		
+		<!--Construção da cadeira: Parte das costas-->
+		<component id="Costas">
+            <transformation>
+				<transformationref id="tchairB"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cubo" />
+            </children>
+        </component>
+		
+		<!--Construção da cadeira: Parte do assento-->
+		<component id="Tampa">
+            <transformation>
+				<transformationref id="tchairC"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cubo" />
+            </children>
+        </component>
+		
+		<!--Construção da cadeira: Parte das pernas da cadeira-->
+		<component id="Pernas">
+            <transformation>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cadeira_Perna1" />
+				<componentref id="Cadeira_Perna2" />
+				<componentref id="Cadeira_Perna3" />
+				<componentref id="Cadeira_Perna4" />
+            </children>
+        </component>
+		
+		<!--Construção da cadeira: Cada perna individual-->
+		<component id="Cadeira_Perna1">
+            <transformation>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Perna" />
+            </children>
+        </component>
+		
+		<component id="Cadeira_Perna2">
+            <transformation>
+				<transformationref id="tchairL1"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Perna" />
+            </children>
+        </component>
+		
+		<component id="Cadeira_Perna3">
+            <transformation>
+				<transformationref id="tchairL2"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Perna" />
+            </children>
+        </component>
+		
+		<component id="Cadeira_Perna4">
+            <transformation>
+				<transformationref id="tchairL3"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Perna" />
+            </children>
+        </component>
+		
+		<!--Construção da cadeira: Componente que é chamado por todas as pernas-->
+		<component id="Perna">
+            <transformation>
+				<transformationref id="tchairLeg"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Cubo" />
+            </children>
+        </component>
+		
+		<!--Construção da cadeira: cubo usado para construir cada componente da cadeira-->
+		<component id="Cubo">
+            <transformation>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Lado1" />
+				<componentref id="Lado2" />
+				<componentref id="Lado3" />
+				<componentref id="Lado4" />
+				<componentref id="Lado5" />
+				<componentref id="Lado6" />
+            </children>
+        </component>
+		
+		<!--Construção do cubo: Cada um dos lados do cubo-->
+		
+		<component id="Lado1">
+            <transformation>
+				<transformationref id="tcubo1"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="quadrado" />
+            </children>
+        </component>
+		
+		<component id="Lado2">
+            <transformation>
+				<transformationref id="tcubo2"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="quadrado" />
+            </children>
+        </component>
+		
+		<component id="Lado3">
+            <transformation>
+				<transformationref id="tcubo3"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="quadrado" />
+            </children>
+        </component>
+		
+		<component id="Lado4">
+            <transformation>
+				<transformationref id="tcubo4"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="quadrado" />
+            </children>
+        </component>
+	
+		<component id="Lado5">
+            <transformation>
+				<transformationref id="tcubo5"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="quadrado" />
+            </children>
+        </component>
+		
+		<component id="Lado6">
+            <transformation>
+				<transformationref id="tcubo6"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="quadrado" />
+            </children>
+        </component>	
+		
+		<!--Todos os faróis do Autocarro-->		
+		<component id="Farois">
+            <transformation>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="farol" />
+            <children>
+                <componentref id="Farol_frente_esquerdo" />
+				<componentref id="Farol_frente_direito" /> 
+				<componentref id="Farol_tras_esquerdo" />
+				<componentref id="Farol_tras_direito" />
+            </children>
+        </component>
+		
+		<!--Cada um dos faróis-->
+		
+		<component id="Farol_frente_esquerdo">
+            <transformation>
+				<transformationref id="tFarois2"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="inherit" />
+            <children>
+                <primitiveref id="farois1" />
+            </children>
+        </component>
+		
+		<component id="Farol_frente_direito">
+            <transformation>
+				<transformationref id="tFarois1"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="inherit" />
+            <children>
+                <primitiveref id="farois1" />
+            </children>
+        </component>
+		
+		<component id="Farol_tras_esquerdo">
+            <transformation>
+				 <transformationref id="tFarois3"/> 
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="inherit" />
+            <children>
+                <primitiveref id="farois1" />
+            </children>
+        </component>
+		
+		<component id="Farol_tras_direito">
+            <transformation>
+				<transformationref id="tFarois4"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="inherit" />
+            <children>
+                <primitiveref id="farois1" />
+            </children>
+        </component>
+					
+		<!--Paredes do 1º Andar do Autocarro-->
+		<component id="Paredes_Autocarro">
+            <transformation>
+            </transformation>
+		  <materials key="v"> 
+                <material id="red" />
+				<material id="black" />
+				<material id="brown" />
+				<material id="default" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Autocarro_chao" />
+				<componentref id="Autocarro_frente" />
+				<componentref id="Autocarro_tras" />
+				<componentref id="Autocarro_esquerda" />
+				<componentref id="Autocarro_direita" />
+            </children>
+        </component>
+		
+		<!--Cada uma das paredes do 1º Andar-->
+		
+		<component id="Autocarro_chao">
+            <transformation>
+				<transformationref id="tChao"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="chao" />
+            </children>
+        </component>
+		
+		<component id="Autocarro_frente">
+            <transformation>
+				<transformationref id="tParedesFI"/>
+            </transformation>
+		  <materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="paredeFT" />
+            </children>
+        </component>
+		
+		<component id="Autocarro_tras">
+            <transformation>
+				<transformationref id="tParedesTI"/>
+            </transformation>
+		  <materials>
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="paredeFT" />
+            </children>
+        </component>
+		
+		<component id="Autocarro_esquerda">
+            <transformation>
+				<transformationref id="tJanelas"/>
+            </transformation>
+			<materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="primJanela" />
+				<primitiveref id="segJanela" />
+				<primitiveref id="tercJanela" />
+				<primitiveref id="quatJanela" />
+				<componentref id="Quintjanela" />
+            </children>
+        </component>
+		
+		<component id="Quintjanela">
+            <transformation>
+            </transformation>
+			<materials> 
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <componentref id="Quintvidro" />
+				<componentref id="Quintsuporte" />
+            </children>
+        </component>
+		
+		<component id="Quintvidro">
+            <transformation>
+            </transformation>
+			<materials> 
+                <material id="default" />
+            </materials> 
+            <texture id="glass3" />
+            <children>
+                <primitiveref id="quintVidro1" />
+				<primitiveref id="quintVidro2" />
+            </children>
+        </component>
+		
+		<component id="Quintsuporte">
+            <transformation>
+            </transformation>
+			<materials> 
+                <material id="black" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="quintSuport1" />
+				<primitiveref id="quintSuport2" />
+				<primitiveref id="quintSuport3" />
+				<primitiveref id="quintSuport4" />
+				<primitiveref id="quintSuport5" />
+            </children>
+        </component>
+		
+		<component id="Autocarro_direita">
+            <transformation>
+				<transformationref id="tParedesD1S"/>
+            </transformation>
+			<materials>
+                <material id="inherit" />
+            </materials> 
+            <texture id="none" />
+            <children>
+                <primitiveref id="primJanela" />
+				<primitiveref id="segJanela" />
+				<primitiveref id="tercJanela" />
+				<primitiveref id="quatJanela" />
+				<primitiveref id="quintJanela" />
+            </children>
+        </component>	
+				
+		
+    </components>
+
+</dsx>
